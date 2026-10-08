@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#101923"><title>Earth · Block detector</title><link rel="stylesheet" href="styles.css"><script src="https://cdn.jsdelivr.net/npm/onnxruntime-web@1.20.1/dist/ort.min.js" defer></script><script type="module" src="app.js"></script></head>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#101923"><title>Earth · Block detector</title><link rel="stylesheet" href="styles.css"><script src="ort.min.js" defer></script><script type="module" src="app.js"></script></head>
 <body><main><header><span class="brand">EARTH <span class="badge">ON DEVICE</span></span><h1>Find your blocks.</h1><p>Point your camera at a red or blue Earth block.</p></header>
 <section class="view"><video id="video" autoplay muted playsinline hidden></video><canvas id="display" aria-label="Camera or photo with detected blocks"></canvas><div id="empty">Your camera view will appear here.</div></section>
 <div class="status" role="status" aria-live="polite"><span id="dot"></span><span id="status">Loading detector…</span></div>

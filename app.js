@@ -8,7 +8,7 @@ function controls(){ $('start').disabled=!session||busy||running;$('stop').disab
 async function load(){
  try{
   if(!window.ort)throw new Error('Runtime download failed. Check your internet connection and reload.');
-  ort.env.wasm.wasmPaths='https://cdn.jsdelivr.net/npm/onnxruntime-web@1.20.1/dist/';ort.env.wasm.numThreads=1;ort.env.wasm.proxy=false;
+  ort.env.wasm.wasmPaths=new URL('./',location.href).href;ort.env.wasm.numThreads=1;ort.env.wasm.proxy=false;ort.env.wasm.initTimeout=60000;
   setStatus('Downloading model (10 MB)…');
   const response=await fetch('./boxes-yolo11n.onnx');if(!response.ok)throw new Error(`Model download failed (${response.status}).`);
   setStatus('Preparing detector…');session=await ort.InferenceSession.create(await response.arrayBuffer(),{executionProviders:['wasm'],graphOptimizationLevel:'all'});
